@@ -1,0 +1,5 @@
+# Copy to terraform.tfvars (git-ignored) and fill in.
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+# location             = "australiaeast"
+# use_cosmos_free_tier = true   # set false if you already have a free-tier Cosmos DB

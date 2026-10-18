@@ -1,0 +1,28 @@
+:root { --ink:#14213d; --paper:#f2f4f7; --panel:#fff; --line:#d9dee7; --flyer:#ffc93c; --route:#0e9f8e; --gap:#d64545; --muted:#5b667a; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --ink:#e8ecf5; --paper:#0f1626; --panel:#172036; --line:#2a3555; --muted:#9aa6bf; color-scheme: dark; } }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--paper); color: var(--ink); display: flex; flex-direction: column; }
+header { display: flex; align-items: center; padding: 10px 14px; background: var(--panel); border-bottom: 1px solid var(--line); }
+header h1 { font-size: 17px; margin: 0; }
+header h1 span { background: var(--flyer); color: #14213d; padding: 1px 7px; border-radius: 4px; margin-right: 6px; }
+header a { margin-left: auto; font-size: 13px; color: var(--route); }
+main { flex: 1; display: grid; grid-template-columns: 330px 1fr; min-height: 0; }
+aside { padding: 14px; overflow: auto; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+#map { min-height: 320px; }
+button { padding: 10px 14px; border-radius: 6px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font: inherit; font-weight: 600; cursor: pointer; }
+button.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+button.go { background: var(--route); border-color: var(--route); color: #fff; }
+button.stop { background: var(--gap); border-color: var(--gap); color: #fff; }
+button.active { outline: 3px solid var(--flyer); }
+button:focus-visible { outline: 3px solid var(--flyer); outline-offset: 1px; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.big { font-size: 38px; font-weight: 700; line-height: 1; }
+.note { font-size: 12.5px; color: var(--muted); }
+.bar { height: 10px; border-radius: 5px; background: var(--line); overflow: hidden; margin: 10px 0 6px; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--route); transition: width .3s; }
+#status { font-size: 13px; min-height: 1.4em; color: var(--muted); }
+hr { border: 0; border-top: 1px solid var(--line); width: 100%; }
+@media (max-width: 760px) { main { grid-template-columns: 1fr; grid-template-rows: auto 55vh; } aside { border-right: 0; border-bottom: 1px solid var(--line); } }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlyerTrack Lite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1><span>Flyer</span>Track Lite</h1>
+    <a href="https://github.com/" id="repo">About this project</a>
+  </header>
+  <main>
+    <aside>
+      <section>
+        <div class="big" id="pct">0%</div>
+        <div class="note">of the delivery zone covered</div>
+        <div class="bar"><i id="bar"></i></div>
+        <div class="note" id="count">0 GPS points</div>
+      </section>
+      <hr>
+      <section>
+        <strong>Quick demo</strong>
+        <p class="note">Replays a pre-recorded walk through a zone in Sydney. No GPS needed.</p>
+        <button class="go" id="sample">Load sample walk</button>
+      </section>
+      <hr>
+      <section>
+        <strong>Your own zone</strong>
+        <p class="note">1. Press Draw zone and click 3+ points on the map. 2. Press Start GPS and walk (phone, HTTPS only).</p>
+        <div class="row">
+          <button id="draw">Draw zone</button>
+          <button class="go" id="start">Start GPS</button>
+          <button class="stop" id="stop" disabled>Stop</button>
+        </div>
+      </section>
+      <div id="status" role="status"></div>
+      <button class="secondary" id="reset">Reset everything</button>
+      <p class="note">Your data stays in this browser (localStorage). Nothing is uploaded.</p>
+    </aside>
+    <div id="map" aria-label="Map"></div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
